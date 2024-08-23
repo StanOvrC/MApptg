@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перефразировщик</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        #inputText, #outputText {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2>Перефразировщик текста</h2>
+    <textarea id="inputText" rows="4" placeholder="Введите текст для перефразирования..."></textarea>
+    <button onclick="paraphraseText()">Перефразировать</button>
+    <textarea id="outputText" rows="4" readonly placeholder="Перефразированный текст появится здесь..."></textarea>
+
+    <script>
+        function paraphraseText() {
+            let inputText = document.getElementById('inputText').value;
+
+            // Здесь должен быть ваш алгоритм перефразирования
+            let outputText = inputText.split('').reverse().join(''); // Простой пример реверса текста
+
+            document.getElementById('outputText').value = outputText;
+        }
+    </script>
+</body>
+</html>
